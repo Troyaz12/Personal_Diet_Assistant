@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Personal_Diet_Assistant</string>
+    <string name="diet_assistant">Diet Assistant</string>
+    <string name="diet_assistant_desc">Diet Assistant</string>
+    <string name="meals">Meals</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="dish">Dish</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+</resources>
