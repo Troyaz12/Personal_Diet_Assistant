@@ -4,10 +4,25 @@
     android:layout_height="match_parent"
     tools:context="tegprogramming.com.personal_diet_assistant.Ingredients">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ingredients"
+            android:textSize="35sp"
+            android:contentDescription="@string/ingredients"
+            android:layout_marginStart="@dimen/profile_textview_start_margin"
+            android:id="@+id/ingredientsTitle"/>
+        <View
+            android:id="@+id/lineExercise"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@android:color/darker_gray"
+            android:layout_below="@id/ingredientsTitle"/>
+
+    </RelativeLayout>
 
 </FrameLayout>
