@@ -3,6 +3,7 @@ package com.tegprogramming.personal_diet_assistant.data;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import com.tegprogramming.personal_diet_assistant.data.DatabaseContract.MealEntry;
 
 /**
  * Created by TroysMacBook on 10/22/17.
@@ -15,6 +16,8 @@ public class MyDbHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "personal_diet_assistant.db";
 
 
+
+
     public MyDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -22,12 +25,13 @@ public class MyDbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         //write sql to create the needed tables
- /*       final String SQL_CREATE_MEAL_TABLE = "CREATE TABLE " + DatabaseContract.MealEntry.TABLE_NAME + " (" +
-                DatabaseContract.MealEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                RoutineEntry.ROUTINE_NAME + " TEXT NOT NULL " +
+       final String SQL_CREATE_MEAL_TABLE = "CREATE TABLE " + MealEntry.TABLE_NAME + " (" +
+                MealEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                MealEntry.FOODITEM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                MealEntry.MEAL_NAME + " TEXT NOT NULL " +
                 " );";
 
-        final String SQL_CREATE_EXERCISESENTRY_TABLE = "CREATE TABLE " + ExercisesEntry.TABLE_NAME + " (" +
+  /*      final String SQL_CREATE_EXERCISESENTRY_TABLE = "CREATE TABLE " + ExercisesEntry.TABLE_NAME + " (" +
                 ExercisesEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 ExercisesEntry.R_ID + " TEXT NOT NULL, " +
                 ExercisesEntry.EXERCISE_NAME + " TEXT NOT NULL " +
