@@ -1,6 +1,5 @@
 package tegprogramming.com.personal_diet_assistant;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -27,7 +26,7 @@ public class Ingredients extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
+ //   private OnFragmentInteractionListener mListener;
 
     public Ingredients() {
         // Required empty public constructor
@@ -66,14 +65,14 @@ public class Ingredients extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ingredients, container, false);
     }
-
+/*
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
-    }
-
+    }   */
+/*
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -90,7 +89,7 @@ public class Ingredients extends Fragment {
         super.onDetach();
         mListener = null;
     }
-
+*/
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -101,8 +100,10 @@ public class Ingredients extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
+    /*
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+    */
 }
