@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-        applicationId "tegprogramming.com.personal_diet_assistant"
+        applicationId "com.tegprogramming.personal_diet_assistant"
         minSdkVersion 18
         targetSdkVersion 26
         versionCode 1

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="tegprogramming.com.personal_diet_assistant">
+    package="com.tegprogramming.personal_diet_assistant">
 
     <application
         android:allowBackup="true"
