@@ -68,7 +68,7 @@ public class DatabaseContract {
         public static final String TABLE_NAME = "dish";
 
         //holds the name of dish
-        public static final String MEAL_NAME = "dish_name";
+        public static final String DISH_NAME = "dish_name";
 
         //holds the id of routine
         public static final String FOODITEM_ID = "fooditem_id";
