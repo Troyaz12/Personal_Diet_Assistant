@@ -40,10 +40,12 @@ public class PdaProvider extends ContentProvider{
         return matcher;
     }
 
+    private MyDbHelper myDBHelper;
 
 
     @Override
     public boolean onCreate() {
+        myDBHelper = new MyDbHelper(getContext());
 
 
         return false;
