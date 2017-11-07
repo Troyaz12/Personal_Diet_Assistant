@@ -1,12 +1,16 @@
 package com.tegprogramming.personal_diet_assistant.data;
 
 import android.content.ContentProvider;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+
+import com.tegprogramming.personal_diet_assistant.R;
 
 /**
  * Created by TroysMacBook on 10/24/17.
@@ -53,8 +57,52 @@ public class PdaProvider extends ContentProvider{
 
     @Nullable
     @Override
-    public Cursor query(@NonNull Uri uri, @Nullable String[] strings, @Nullable String s, @Nullable String[] strings1, @Nullable String s1) {
-        return null;
+    public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
+
+
+        // Get readable database
+        SQLiteDatabase database = myDBHelper.getReadableDatabase();
+
+        // This cursor will hold the result of the query
+        Cursor cursor;
+
+        // Figure out if the URI matcher can match the URI to a specific code
+        int match = sUriMatcher.match(uri);
+        switch (match) {
+            case MEAL:
+                selection = DatabaseContract.MealEntry._ID + "=?";
+                selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
+                cursor = database.query(DatabaseContract.MealEntry.TABLE_NAME,projection,selection,selectionArgs,
+                        null,null, sortOrder);
+                break;
+
+            case DISH:
+                selection = DatabaseContract.DishEntry._ID + "=?";
+                selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
+
+                cursor = database.query(DatabaseContract.DishEntry.TABLE_NAME,projection,selection,selectionArgs,
+                        null,null, sortOrder);
+                break;
+
+            case INGREDIENT:
+                selection = DatabaseContract.IngredientEntry._ID + "=?";
+                selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
+
+                cursor = database.query(DatabaseContract.IngredientEntry.TABLE_NAME,projection,selection,selectionArgs,
+                        null,null, sortOrder);
+                break;
+
+            case INGREDIENTS:
+                cursor = database.query(DatabaseContract.IngredientEntry.TABLE_NAME,projection,selection,selectionArgs,
+                        null,null, sortOrder);
+                break;
+
+            default:
+                throw new IllegalArgumentException(getContext().getString(R.string.unknown_uri) + uri);
+        }
+
+
+        return cursor;
     }
 
     @Nullable
