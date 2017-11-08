@@ -9,5 +9,7 @@
     <string name="drawer_close">Close</string>
     <string name="unknown_uri">Cannot query unknown URI</string>
 
+    <string name="failed_to_insert_row">Failed to insert row for</string>
+    <string name="insertion_not_supported">Insertion is not supported for</string>
 
 </resources>
